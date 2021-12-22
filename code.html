@@ -14,6 +14,11 @@
     <!-- Custom CSS -->
     <link href="css/site.css" rel="stylesheet" />
 
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
     <!-- Prism CSS -->
     <link href="css/prism.css" rel="stylesheet" />
     <!-- Font Awesome -->
@@ -31,8 +36,8 @@
     <!-- Navbar Section -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="img/TL_Shadow_Circle_Dark.png"
-                    class="d-inline-block align-text-top me-2" width="30">App Name</a>
+            <a class="navbar-brand reverse-logo-font" href="#"><img src="img/reverse_app_clear_logo.png"
+                    class="d-inline-block align-text-top me-2" width="30">.reverse</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -49,7 +54,8 @@
                         <a class="nav-link active" aria-current="page" href="code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" target="_blank">Git Repo</a>
+                        <a class="nav-link" href="https://github.com/tj-longshore/reverse_app" target="_blank">Git
+                            Repo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://tj-longshore-portfolio.netlify.app/" target="_blank">About</a>
@@ -62,22 +68,84 @@
     <!-- Main Section -->
     <main class="flex-shrink-0 py-5">
         <div class="container-fluid py-5 px-5">
-            <h2 class="border-1 border-bottom border-dark">The Code</h2>
+            <h2 class="border-2 border-bottom reverse-logo-font">The Code for .reverse</h2>
             <div class="row row-cols-1 row-cols-md-2">
                 <div class="col-md-8">
                     <pre class="line-numbers">
                         <code class="language-javascript">
-                            //Call Hello World
-                            function HelloWorld(){
-                                alert("Hello World");
+                            //Get the user entered string from the page
+                            //controller function
+                            function getString(){
+                            
+                                document.getElementById("alert").classList.add("invisible");
+                            
+                                let originalString = document.getElementById("originalString").value;
+                            
+                                let revString = reverseString(originalString);
+                            
+                                displayString(revString);
+                            }
+                            
+                            //Reverse the string
+                            //logic function
+                            function reverseString(originalString){
+                            
+                                let revString = [];
+                            
+                                //reverse string with a for loop
+                                let userString = document.getElementById("originalString").value;
+                                for (let i = userString.length - 1; i >= 0; i--){
+                                    revString += userString[i];
+                                }
+                                return revString;
+                            }
+                            
+                            //Display the message
+                            //view function
+                            function displayString(revString){
+                                
+                                //Display message to the page
+                                document.getElementById("msg").innerHTML = `Your string reversed is: ${revString}`;
+                            
+                                //Show the alert box
+                                document.getElementById("alert").classList.remove("invisible");
+                            
                             }
                         </code>
                     </pre>
                 </div>
                 <div class="col-md-4">
-                    <p> The Code is structured in one function</p>
-                    <h5>Hello World</h5>
-                    <p>Hello World is a function that displays an alert with a message of, "Hello World"</p>
+                    <!-- code intro -->
+                    <p> The code for .reverse is made up of three functions: <span
+                        class="reverse-logo-font">getString</span>, <span
+                        class="reverse-logo-font">reverseString</span>, and <span
+                        class="reverse-logo-font">displayString</span>.</p>
+
+                    <!-- getString -->
+                    <h5 class="reverse-logo-font border-bottom border-2 pb-2">getString</h5>
+                    <p>The function <span class="reverse-logo-font">getString</span> is the controller function. 
+                        <br class="mb-3">
+                        First, the function adds the class of "invisible" to the alert display field to ensure it is not
+                        displayed until after the code executes completely.
+                        <br class="mb-3">
+                        It then sets the variable of originalString to the value of the user's input string. The
+                        variable revString is also given the value of the second function, <span class="reverse-logo-font">reverseString</span>.
+                        <br class="mb-3">
+                        Finally, it executes the function <span class="reverse-logo-font">displayString</span> which
+                        displays the reversed string to the page.</p>
+
+                    <!-- reverseString -->
+                    <h5 class="reverse-logo-font border-bottom border-2 pb-2">reverseString</h5>
+                    <p>The function <span class="reverse-logo-font">reverseString</span> is the logic function.
+                        <br class="mb-3">
+                        The function first creates an empty array, revString. It establishes the variable, userString, which is the value of the user's input string. Then it uses a for loop which starts at the end of the user input string and decrements. These values are then added to the array in decrementing order to reverse the string.</p>
+
+                    <!-- reverseString -->
+                    <h5 class="reverse-logo-font border-bottom border-2 pb-2">displayString</h5>
+                    <p>The function <span class="reverse-logo-font">displayString</span> is the display function.
+                        <br class="mb-3">
+                        The message is displayed to the screen by utilizing the HTML DOM .innerHTML property to set the HTML content. A template literal is utilized for ease of incorporating JS variables into the message displayed. The class of "invisible" is removed from the appropriate html element so the alert is displayed.
+                        </p>
                 </div>
             </div>
         </div>
@@ -94,7 +162,7 @@
                     </div>
                 </div>
                 <div class="col d-flex align-items-center justify-content-start justify-content-md-center">
-                    <img src="/img/TL_Shadow_Plain_Dark.png" alt="TJ Longshore Logo" height="50">
+                    <img src="/img/TL_Clear_Logo.png" alt="TJ Longshore Logo" height="50">
                 </div>
                 <div class="col d-flex justify-content-md-end align-items-center">
                     <div class="row">

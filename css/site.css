@@ -1,23 +1,69 @@
 :root {
-    --yellow-primary: #f1ca6e;
-    --yellow-secondary: #FFDD8F;
-    --blue-primary: #2B51A6;
-    --blue-secondary: #6F98F2;
-    --brown: #A6863C;
     --dark-color: #292929;
     --white: #f8f9fa;
+
+    /* Reverse App Specific Colors */
+    --reverse-green: #65bf93;
+    --reverse-blue: #68E8F2;
+    --reverse-dark-blue-green: #0C5359;
+    --reverse-dark: #222940;
+    --reverse-light-gray: #b7b9be;
+    --reverse-dark-gray: #4a4e59;
 }
+/* Reverse App Specific CSS Styling */
+.reverse-logo-font {
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 300 !important;
+    color: var(--reverse-green) !important;
+}
+
+.reverse-button {
+    border: solid 1px var(--reverse-green);
+    color: var(--reverse-dark);
+}
+
+.reverse-button:hover, .reverse-button:active {
+    background-color: var(--reverse-dark);
+    color: var(--reverse-green);
+    border: solid 1px var(--reverse-green);
+}
+
+.nav-link:hover {
+    color: var(--reverse-green) !important;
+}
+
+.description {
+    font-size: 1.1rem;
+    font-weight: 100;
+}
+
+.msg-background {
+    border: solid var(--reverse-dark)
+}
+
+.msg-green-text {
+    color: var(--reverse-green);
+}
+
+.form-highlight:focus {
+    border: 2px solid var(--reverse-blue) !important;
+    box-shadow: 0 0 3px var(--reverse-blue) !important;
+}
+
+/* Standard Styling */
 
 body {
     color: var(--dark-color);
+    background-color: white;
 }
 
 nav, footer {
-    background-color: var(--dark-color);
+    background-color: var(--reverse-dark);
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: var(--dark-color)
+    color: var(--dark-color);
+    font-family: 'Open Sans', sans-serif !important;
 }
 
 main>.container {
@@ -33,7 +79,7 @@ main>.container {
 }
 
 span>i {
-    color: var(--yellow-primary)
+    color: var(--reverse-blue)
 }
 
 
@@ -42,18 +88,21 @@ footer .social>a {
 }
 
 footer .social>a:hover {
-    color: var(--blue-secondary);
+    color: var(--reverse-green);
 }
 
 .js-icon {
     color: #f0db4f;
 }
 
+/* Languages / Technologies Icons */
+
 .bootstrap-icon {
     background: #DA22FF;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #8a83f2, #6f10f4);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #8a83f2, #6f10f4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 
 }
@@ -63,6 +112,7 @@ footer .social>a:hover {
     background: -webkit-linear-gradient(to right, #e34c26, #f06529);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #e34c26, #f06529); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -71,8 +121,11 @@ footer .social>a:hover {
     background: -webkit-linear-gradient(to right, #264de4, #2965f1);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #264de4, #2965f1); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+/* Code Page */
 
 code[class*="language-"],
     pre[class*="language-"] {
